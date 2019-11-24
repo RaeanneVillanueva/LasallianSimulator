@@ -10,7 +10,7 @@
 
     <style name="AppTheme.CustomTheme">
         <item name= "android:backgroundDimEnabled">true</item>
-        <item name= "android:backgroundDimAmount">0.1</item>
+<!--        <item name= "android:backgroundDimAmount">0.1</item>-->
         <item name="android:windowCloseOnTouchOutside">true</item>
         <item name="dialogCornerRadius">5dp</item>
     </style>
