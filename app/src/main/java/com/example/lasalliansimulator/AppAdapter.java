@@ -1,18 +1,16 @@
-package com.example.LasallianSimulator;
+package com.example.lasalliansimulator;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 
-
-import java.lang.reflect.Array;
 import java.util.List;
 
 public class AppAdapter extends BaseAdapter{

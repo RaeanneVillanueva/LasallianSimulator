@@ -1,6 +1,4 @@
-package com.example.LasallianSimulator;
-
-import android.graphics.drawable.Drawable;
+package com.example.lasalliansimulator;
 
 public class Data {
 

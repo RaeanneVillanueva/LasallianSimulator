@@ -1,4 +1,4 @@
-package com.example.LasallianSimulator;
+package com.example.lasalliansimulator;
 
 public class GameEngine {
 
