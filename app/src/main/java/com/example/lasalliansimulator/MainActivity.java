@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
         array = new ArrayList<>();
 
-        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", 10, 4, 5, 0));
-        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", 20,5, 0, 8));
-        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", 15,4,6,5));
-        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", 20,6,8,9));
-        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", 10,8,6,5));
-        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", 30,6,7,1));
-        array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Hi?", 0,0,0,0));
+        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", new Consequence(10, 10, 10, 10), new Consequence(5,5,5,5)));
+        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", new Consequence(20,20,20,20), new Consequence(10,10,10,10)));
+        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", new Consequence(15,15,15,15), new Consequence(10,10,10,10)));
+        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", new Consequence(10,10,10,10), new Consequence((10,10,10,10))));
+        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", new Consequence(15,15,15,15), new Consequence(20,20,20,20)));
+        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", new Consequence(30,30,30,30), new Consequence(15,15,15,15)));
+        array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Hi?", new Consequence(50,50,50,50), new Consequence(50,50,50,50)));
 
-        appAdapter = new AppAdapter(array, MainActivity.this);
+         appAdapter = new AppAdapter(array, MainActivity.this);
         flingContainer.setAdapter(appAdapter);
 
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
