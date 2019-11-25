@@ -1,6 +1,7 @@
 package com.example.lasalliansimulator;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.LinearLayout;
@@ -35,12 +36,12 @@ public class MainActivity extends AppCompatActivity {
 
         array = new ArrayList<>();
 
-        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", 1, 4, 5, 0));
-        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", 1,5, 0, 8));
-        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", 3,4,6,5));
-        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", 2,6,8,9));
-        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", 5,8,6,5));
-        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", 4,6,7,1));
+        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", 10, 4, 5, 0));
+        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", 20,5, 0, 8));
+        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", 15,4,6,5));
+        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", 20,6,8,9));
+        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", 10,8,6,5));
+        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", 30,6,7,1));
         array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Hi?", 0,0,0,0));
 
         appAdapter = new AppAdapter(array, MainActivity.this);
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLeftCardExit(Object dataObject) {
 
-                health_bar.setProgress(health_bar.getMax() + array.get(0).getHealthPts());
+                health_bar.setProgress(health_bar.getProgress() + array.get(0).getHealthPts());
 
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();
