@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public AppAdapter appAdapter;
     private ArrayList<Data> array;
     private SwipeFlingAdapterView flingContainer;
-    private ProgressBar health_bar;
+    private ProgressBar health_bar, social_bar, grades_bar, money_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +29,19 @@ public class MainActivity extends AppCompatActivity {
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.swipeFrame);
 
         health_bar = findViewById(R.id.healthBar);
+        social_bar = findViewById(R.id.socialBar);
+        grades_bar = findViewById(R.id.gradesBar);
+        money_bar = findViewById(R.id.moneyBar);
 
         array = new ArrayList<>();
 
-        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks.."));
-        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared.."));
-        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!"));
-        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser.."));
-        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!"));
-        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired.."));
-        array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Hi?"));
+        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", 1, 4, 5, 0));
+        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", 1,5, 0, 8));
+        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", 3,4,6,5));
+        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", 2,6,8,9));
+        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", 5,8,6,5));
+        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", 4,6,7,1));
+        array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Hi?", 0,0,0,0));
 
         appAdapter = new AppAdapter(array, MainActivity.this);
         flingContainer.setAdapter(appAdapter);
@@ -51,8 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onLeftCardExit(Object dataObject) {
+
+                health_bar.setProgress(health_bar.getMax() + array.get(0).getHealthPts());
+
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();
+
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
@@ -61,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRightCardExit(Object dataObject) {
 
+                health_bar.setProgress(health_bar.getMax() - array.get(0).getHealthPts());
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();
             }

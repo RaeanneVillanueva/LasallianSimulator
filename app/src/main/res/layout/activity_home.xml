@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.lasallianSimulator.HomeActivity" >
+    tools:context="com.example.lasalliansimulator.HomeActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,8 +29,8 @@
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="527dp" />
 
     <Button
         android:id="@+id/btn_play"
