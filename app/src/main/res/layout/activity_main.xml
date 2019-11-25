@@ -63,8 +63,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:padding="5dp"
                 android:progress="50"
-                android:padding="5dp" />
+                android:progressDrawable="@drawable/custom_progress"
+                android:scaleY="0.5" />
 
             <ProgressBar
                 android:id="@+id/socialBar"
@@ -72,8 +74,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:padding="5dp"
                 android:progress="50"
-                android:padding="5dp" />
+                android:progressDrawable="@drawable/custom_progress"
+                android:scaleY="0.5" />
 
             <ProgressBar
                 android:id="@+id/gradesBar"
@@ -81,8 +85,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:padding="5dp"
                 android:progress="50"
-                android:padding="5dp" />
+                android:progressDrawable="@drawable/custom_progress"
+                android:scaleY="0.5" />
 
             <ProgressBar
                 android:id="@+id/moneyBar"
@@ -90,8 +96,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:padding="5dp"
                 android:progress="50"
-                android:padding="5dp" />
+                android:progressDrawable="@drawable/custom_progress"
+                android:scaleY="0.5" />
+
         </LinearLayout>
     </LinearLayout>
 
