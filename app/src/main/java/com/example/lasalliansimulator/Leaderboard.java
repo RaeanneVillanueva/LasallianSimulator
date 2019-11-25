@@ -30,11 +30,11 @@ public class Leaderboard extends Fragment {
         view =  inflater.inflate(R.layout.fragment_leaderboard, container, false);
         leaderboardLbl = view.findViewById(R.id.leaderboard_lbl);
 
-        recyclerArea = (RecyclerView) view.findViewById(R.id.recycler_area);
-        recyclerAdapter = new RecyclerAdapter(getContext(), array);
-        recyclerArea.setAdapter(recyclerAdapter);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerArea.setLayoutManager(layoutManager);
+//        recyclerArea = (RecyclerView) view.findViewById(R.id.recycler_area);
+//        recyclerAdapter = new RecyclerAdapter(getContext(), array);
+//        recyclerArea.setAdapter(recyclerAdapter);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+//        recyclerArea.setLayoutManager(layoutManager);
 
         return view;
     }
