@@ -36,13 +36,18 @@ public class MainActivity extends AppCompatActivity {
 
         array = new ArrayList<>();
 
-        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", new Consequence(10, 10, 10, 10), new Consequence(5,5,5,5)));
-        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", new Consequence(20,20,20,20), new Consequence(10,10,10,10)));
-        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", new Consequence(15,15,15,15), new Consequence(10,10,10,10)));
-        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", new Consequence(10,10,10,10), new Consequence((10,10,10,10))));
-        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", new Consequence(15,15,15,15), new Consequence(20,20,20,20)));
-        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", new Consequence(30,30,30,30), new Consequence(15,15,15,15)));
-        array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Hi?", new Consequence(50,50,50,50), new Consequence(50,50,50,50)));
+
+        array.add(new Data(R.drawable.mom, "Mom", "DCAT is coming, you should study!", "Study", "Stock Knowledge", new Consequence(0, 10, 15, 0), new Consequence(0,-10,-20,0)));
+        array.add(new Data(0, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", new Consequence(0, 10, 15, 0), new Consequence(0,-10,-20,0)));
+
+
+        array.add(new Data(R.drawable.andrew, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", new Consequence(0, 10, 15, 0), new Consequence(0,-10,-20,0)));
+        array.add(new Data(R.drawable.dad, "Dad", "Go drink and have fun! I won't tell mom..", "You're the best dad!", "I'm scared..", new Consequence(20,20,0,-20), new Consequence(20,-10,0,10)));
+        array.add(new Data(R.drawable.mom, "Mom", "Go home now! If you don't go home, I kill you!", "OK!", "GOING NOW!", new Consequence(0,-10,0,10), new Consequence(0,-10,0,10)));
+        array.add(new Data(R.drawable.bob, "Bob", "Hi there! I like playing LoL, wanna play with me?", "Sure?","Loser..", new Consequence(-10,10,-5,0), new Consequence(10,-30,5,0)));
+        array.add(new Data(R.drawable.bek, "Bek", "Lemme draw you!", "That would be great!", "Hell no!", new Consequence(10,15,0,0), new Consequence(-20,-30,0,0)));
+        array.add(new Data(R.drawable.james, "James", "Meet me at the gym! Let's lift weights!", "Gainz!!", "I'm tired..", new Consequence(30,30,0,0), new Consequence(-40,15,0,0)));
+        array.add(new Data(R.drawable.girl, "Random Girl", "Hi im nothing", "Hi?", "Ew", new Consequence(0,0,0,0), new Consequence(-50,-50,-50,-50)));
 
          appAdapter = new AppAdapter(array, MainActivity.this);
 
@@ -57,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLeftCardExit(Object dataObject) {
 
-                health_bar.setProgress(health_bar.getProgress() + array.get(0).getHealthPts());
-                social_bar.setProgress(social_bar.getProgress() + array.get(0).getSocialPts());
-                grades_bar.setProgress(grades_bar.getProgress() + array.get(0).getGradesPts());
-                money_bar.setProgress(money_bar.getProgress() + array.get(0).getMoneyPts());
+                health_bar.setProgress(health_bar.getProgress() + array.get(0).getConsequenceRight().getHealth());
+                social_bar.setProgress(social_bar.getProgress() + array.get(0).getConsequenceRight().getSocial());
+                grades_bar.setProgress(grades_bar.getProgress() + array.get(0).getConsequenceRight().getGrades());
+                money_bar.setProgress(money_bar.getProgress() + array.get(0).getConsequenceRight().getMoney());
 
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();
@@ -73,10 +78,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRightCardExit(Object dataObject) {
 
-                health_bar.setProgress(health_bar.getProgress() - array.get(0).getHealthPts());
-                social_bar.setProgress(social_bar.getProgress() - array.get(0).getSocialPts());
-                grades_bar.setProgress(grades_bar.getProgress() - array.get(0).getGradesPts());
-                money_bar.setProgress(money_bar.getProgress() - array.get(0).getMoneyPts());
+                health_bar.setProgress(health_bar.getProgress() + array.get(0).getConsequenceLeft().getHealth());
+                social_bar.setProgress(social_bar.getProgress() + array.get(0).getConsequenceLeft().getSocial());
+                grades_bar.setProgress(grades_bar.getProgress() + array.get(0).getConsequenceLeft().getGrades());
+                money_bar.setProgress(money_bar.getProgress() + array.get(0).getConsequenceLeft().getMoney());
 
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();

@@ -23,6 +23,21 @@ public class Leaderboard extends Fragment {
     private RecyclerAdapter recyclerAdapter;
     private ArrayList<LeaderboardData> array;
 
+    public Leaderboard(){
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        array = new ArrayList<>();
+        array.add(new LeaderboardData(1, "John", "Senior, 2nd Term"));
+        array.add(new LeaderboardData(2, "Anne", "Soph, 2nd Term"));
+        array.add(new LeaderboardData(3, "Andrew", "Frosh, 3nd Term"));
+        array.add(new LeaderboardData(4, "Rae", "Frosh, 2nd Term"));
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,16 +52,5 @@ public class Leaderboard extends Fragment {
 //        recyclerArea.setLayoutManager(layoutManager);
 
         return view;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        array = new ArrayList<>();
-        array.add(new LeaderboardData(1, "John", "Senior, 2nd Term"));
-        array.add(new LeaderboardData(2, "Anne", "Soph, 2nd Term"));
-        array.add(new LeaderboardData(3, "Andrew", "Frosh, 3nd Term"));
-        array.add(new LeaderboardData(4, "Rae", "Frosh, 2nd Term"));
     }
 }
