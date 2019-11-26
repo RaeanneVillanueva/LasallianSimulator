@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 appAdapter.notifyDataSetChanged();
 
                 if(!AppConstants.player.isSurviving()){
-                    Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                    Intent intent = new Intent(MainActivity.this, GameOver.class);
                     startActivity(intent);
                     finish();
                 }
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 appAdapter.notifyDataSetChanged();
 
                 if(!AppConstants.player.isSurviving()){
-                    Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                    Intent intent = new Intent(MainActivity.this, GameOver.class);
                     startActivity(intent);
                     finish();
                 }

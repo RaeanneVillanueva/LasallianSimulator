@@ -21,7 +21,7 @@ public class Player {
     }
 
     public boolean isSurviving(){
-        if(health>0&&social>0&&money>0&&grades>0) return true;
+        if(health>0&&health<100&&social>0&&social<100&&money>0&&money<100&&grades>0&&grades<100) return true;
         return false;
     }
 
