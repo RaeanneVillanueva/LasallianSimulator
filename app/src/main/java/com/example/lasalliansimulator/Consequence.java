@@ -14,6 +14,13 @@ public class Consequence {
         this.money = money;
     }
 
+    public Consequence(){
+        this.health = 0;
+        this.social = 0;
+        this.grades = 0;
+        this.money = 0;
+    }
+
     public int getHealth() {
         return health;
     }

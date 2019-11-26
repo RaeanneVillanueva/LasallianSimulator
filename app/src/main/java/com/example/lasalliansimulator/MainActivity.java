@@ -1,5 +1,6 @@
 package com.example.lasalliansimulator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppConstants.init();
+
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.swipeFrame);
 
         health_bar = findViewById(R.id.healthBar);
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         array.add(new Data(R.drawable.mom, "Mom", "DCAT is coming, you should study!", "Study", "Stock Knowledge", new Consequence(0, 10, 15, 0), new Consequence(0,-10,-20,0)));
+        array.add(new Data(0, "Narrator", "Congratulations! you passed DCAT. Welcome to DLSU", "Wow", "Yay!", new Consequence(), new Consequence()));
         array.add(new Data(0, "Andrew", "Let's code! Want me to reserve a discussion room?", "Sure!", "No thanks..", new Consequence(0, 10, 15, 0), new Consequence(0,-10,-20,0)));
 
 
@@ -62,29 +66,49 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLeftCardExit(Object dataObject) {
 
-                health_bar.setProgress(health_bar.getProgress() + array.get(0).getConsequenceRight().getHealth());
-                social_bar.setProgress(social_bar.getProgress() + array.get(0).getConsequenceRight().getSocial());
-                grades_bar.setProgress(grades_bar.getProgress() + array.get(0).getConsequenceRight().getGrades());
-                money_bar.setProgress(money_bar.getProgress() + array.get(0).getConsequenceRight().getMoney());
+                AppConstants.player.setChanges(array.get(0).getConsequenceRight());
+
+                updateProgressBar();
 
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();
 
+                if(!AppConstants.player.isSurviving()){
+                    Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
+
+
+
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
 
-                health_bar.setProgress(health_bar.getProgress() + array.get(0).getConsequenceLeft().getHealth());
-                social_bar.setProgress(social_bar.getProgress() + array.get(0).getConsequenceLeft().getSocial());
-                grades_bar.setProgress(grades_bar.getProgress() + array.get(0).getConsequenceLeft().getGrades());
-                money_bar.setProgress(money_bar.getProgress() + array.get(0).getConsequenceLeft().getMoney());
+                AppConstants.player.setChanges(array.get(0).getConsequenceLeft());
+
+                updateProgressBar();
+
 
                 array.remove(0);
                 appAdapter.notifyDataSetChanged();
+
+                if(!AppConstants.player.isSurviving()){
+                    Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            private void updateProgressBar(){
+                health_bar.setProgress(AppConstants.player.getHealth());
+                social_bar.setProgress(AppConstants.player.getSocial());
+                grades_bar.setProgress(AppConstants.player.getGrades());
+                money_bar.setProgress(AppConstants.player.getMoney());
             }
 
             @Override
