@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         array.add(new Data(R.drawable.prof3, "Upperclassmen", "Hey frosh! Would like to join us for dinner? Your blockmates are coming too!", "Sure!!", "I wanna go home..", new Consequence(0,30,0,0), new Consequence(0,-20,0,0)));
         array.add(new Data(R.drawable.prof3, "Upperclassmen", "How about the after party? Can you join us?", "G!", "I really wanna go home..", new Consequence(-10,30,0,0), new Consequence(0,-20,0,0)));
 
+//        array.add(new Data(0, "Upperclassmen", "You went the party.", "Let's go!", "Okay..", new Consequence(0,0,0,0), new Consequence(0,0,0,0)));
+
         //narration: you were forced to join the party
 
         array.add(new Data(R.drawable.prof2, "Upperclassmen", "You should try out this drink! You’ll surely love it!", "Lemme buy one!!", "No thanks..", new Consequence(-20,20,0,-10), new Consequence(10,-10,0,20)));

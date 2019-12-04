@@ -22,5 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Again"
+        android:background="@drawable/button_shape"
+        android:fontFamily="@font/cutie"
+        android:textColor="@android:color/white"
+
         android:onClick="playAgain"/>
 </LinearLayout>
