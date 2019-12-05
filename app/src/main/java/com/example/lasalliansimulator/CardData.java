@@ -1,6 +1,6 @@
 package com.example.lasalliansimulator;
 
-public class Data {
+public class CardData {
 
     private String scenario;
     private String characterName;
@@ -10,7 +10,7 @@ public class Data {
 //    private int health,social, grades, money;
     private Consequence left, right;
 
-    public Data(int imagePath, String characterName, String scenario, String  choiceLeft, String choiceRight, Consequence left, Consequence right) {
+    public CardData(int imagePath, String characterName, String scenario, String  choiceLeft, String choiceRight, Consequence left, Consequence right) {
         this.imagePath = imagePath;
         this.characterName = characterName;
         this.scenario = scenario;

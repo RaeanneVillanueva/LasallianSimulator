@@ -16,8 +16,16 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, PopUpPlayerName.class);
         startActivity(intent);
         finish();
+    }
+
+    public void openLeaderboard(View view) {
+
+    }
+
+    public void openQuests(View view) {
+
     }
 }

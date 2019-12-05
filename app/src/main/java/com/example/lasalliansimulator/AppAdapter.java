@@ -15,10 +15,10 @@ import java.util.List;
 
 public class AppAdapter extends BaseAdapter{
 
-    public List<Data> data;
+    public List<CardData> data;
     public Context context;
 
-    public AppAdapter(List<Data> apps, Context context) {
+    public AppAdapter(List<CardData> apps, Context context) {
         this.data = apps;
         this.context = context;
     }
