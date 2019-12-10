@@ -1,16 +1,20 @@
 package com.example.lasalliansimulator;
 
 public class Player {
+
+    private String name;
     private int health;
     private int social;
     private int money;
     private int grades;
+    private int term;
 
     public Player(){
         this.health = 50;
         this.social = 50;
         this.money = 50;
         this.grades = 50;
+        this.term = 0;
     }
 
     public void setChanges(Consequence consequence){
@@ -55,6 +59,22 @@ public class Player {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public int getTerm() {
+        return term;
+    }
+
+    public void setTerm(int term) {
+        this.term = term;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 

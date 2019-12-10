@@ -116,7 +116,7 @@
             android:id="@+id/swipeFrame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:rotation_degrees="15.5" />
+            app:rotation_degrees="15.5"/>
     </FrameLayout>
 
     <LinearLayout
