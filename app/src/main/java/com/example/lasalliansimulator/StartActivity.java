@@ -22,10 +22,14 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void openLeaderboard(View view) {
-
+        Intent intent = new Intent(this, LeaderboardActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     public void openQuests(View view) {
-
+        Intent intent = new Intent(this, QuestsActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
