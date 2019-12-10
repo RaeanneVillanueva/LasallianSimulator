@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public AppAdapter appAdapter;
     private SwipeFlingAdapterView flingContainer;
     private ProgressBar health_bar, social_bar, grades_bar, money_bar;
-
+    private TextView playername_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
         social_bar = findViewById(R.id.socialBar);
         grades_bar = findViewById(R.id.gradesBar);
         money_bar = findViewById(R.id.moneyBar);
-         appAdapter = new AppAdapter(AppConstants.array, MainActivity.this);
+        playername_view = findViewById(R.id.playername_view);
+
+        playername_view.setText(AppConstants.player.getName());
+
+
+
+        appAdapter = new AppAdapter(AppConstants.array, MainActivity.this);
 
         flingContainer.setAdapter(appAdapter);
 
@@ -56,11 +63,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-                //Do something on the left!
-                //You also have access to the original object.
-                //If you want to use it just cast it (String) dataObject
-
-
 
             }
 
