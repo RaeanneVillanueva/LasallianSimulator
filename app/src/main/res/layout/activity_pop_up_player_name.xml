@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edittxt_charname"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -12,30 +13,29 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_margin="10dp"
-        android:textSize="20dp"
         android:fontFamily="@font/cutie"
-        android:text="Character Name" />
+        android:gravity="center"
+        android:text="Character Name"
+        android:textSize="20dp" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:fontFamily="@font/prstartk"
         android:gravity="center"
-        android:inputType="textPersonName"
-        android:hint="Input Character Name"
-        android:fontFamily="@font/prstartk"/>
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btn_startterm"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Start Your Term!"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/cutie"
-        android:textColor="@android:color/white"
-        android:onClick="startGameEngine"/>
+        android:onClick="startGameEngine"
+        android:text="Start Your Term!"
+        android:textColor="@android:color/white" />
 </LinearLayout>

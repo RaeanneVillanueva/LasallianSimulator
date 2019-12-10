@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg3"
     android:gravity="center"
     android:orientation="vertical">
-<!--    tools:context="com.example.LasallianSimulator.StartActivity">-->
+    <!--    tools:context="com.example.LasallianSimulator.StartActivity">-->
 
     <TextView
         android:id="@+id/gameTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp"
-        android:textSize="40dp"
         android:fontFamily="@font/cutie"
-        android:text="Lasallian Simulator" />
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Lasallian Simulator"
+        android:textColor="#1A6D39"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_new"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/btn_new"
@@ -27,7 +31,9 @@
         android:fontFamily="@font/cutie"
         android:onClick="startGame"
         android:text="New Game"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btn_leaderboard"
+        tools:layout_editor_absoluteX="90dp" />
 
     <Button
         android:id="@+id/btn_leaderboard"
@@ -36,9 +42,11 @@
         android:layout_margin="5dp"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/cutie"
-        android:onClick="startGame"
+        android:onClick="openLeaderboard"
         android:text="Leaderboard"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="547dp" />
 
     <Button
         android:id="@+id/btn_quests"
@@ -47,7 +55,9 @@
         android:layout_margin="5dp"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/cutie"
-        android:onClick="startGame"
+        android:onClick="openQuests"
         android:text="Quests"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="602dp" />
 </LinearLayout>
